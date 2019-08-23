@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+<style type="text/css">
+body
+{
+	font-family: Arial;
+}
+</style>
+</head>
+
+<body>
+
+<h1 align="center">
+
+-------3.x 常见问题解答---------
+</h1>
+
+<ul>
+<li><strong>Q:浏览https 时 浏览器出现不安全的提示</li></strong>
+<br>
+
+A:关闭adbyby 删除安装目录下的Rootca文件夹 以管理员身份运行adbyby 程序 即可，火狐浏览器需要重新导入证书
+<br><br>
+<li><strong>Q:使用时 网页载入慢 </li></strong>
+<br>
+A:关闭杀软（360 管家等） 和防火墙 清除浏览器缓存
+<br><br>
+
+<li><strong>Q:有时优酷 爱奇艺 网页等无法过滤怎么办 </li></strong>
+<br>
+A:出现这种情况 一般是加了第三方过滤规则或插件或者hosts有关，请卸载或清除 删除浏览器缓存 右键检查更新规则 即可
+<br><br>
+<li><strong>Q：某些情况下优酷连续播放的的时候 会出现45s的广告提示 ,怎么办？</li></strong>
+<br>
+A:这种情况是 因为优酷特有的flash cookies 作祟， 解决方法  ①win+R -->cmd       del /s/q %appdata%\*.sol  回车就行
+<br><br>
+
+<li><strong>Q：QQ广告如何过滤</li></strong>
+<br>
+A：由于收到腾讯方面的律师函，故对腾讯加了白名单，你可以打开安装目录下adhook.ini,自行删除 保存 重启软件 即可
+<br><br>
+<li><strong>Q: 如何更新ssllist </li></strong>
+<br>
+A:sslist 正常情况下是不推送更新的，需要使用者自行配制，sslist 下载地址链接：链接：https://raw.githubusercontent.com/adbyby/SSLLIST/master/SSLLIST.ini 覆盖即可
+<br><br>
+<li><strong>Q:删除驱动后 重新运行程序 会提示驱动加载失败 程序闪退 怎么办</li></strong>
+<br>
+A:重启系统 以管理员身份运行程序 即可
+<br><br>
+
+<li><strong>Q: 规则无法自动更新怎么办</li></strong>
+<br>
+A:这种情况是因为部分运营商连接百度cdn偶尔抽风 解决方法 打开hosts  210.14.141.213 update.adbyby.com  保存即可 特别说明（win7/8/8.1/10）用户 先改下hosts 权限 否则无法写入；移动用户自行更改百度dns 进行更新
+<br><br>
+
+<li><strong>Q:微信pc版、网页版不能发送图片，论坛qq快速登陆,如何处理</li></strong>
+<br>
+A:adbyby3.x版使用微信pc版、网页版不能发送图片，论坛qq不能快速登陆问题，请将adhook.ini中exename=~qq,*改成exename=~wechat,* whitehost=qq.com删除 保存后 重启adbyby。
+<br><br>
+<li><strong>Q:更新win 10 rs2 15063 adbyby无法自启动，怎么办？</li></strong>
+<br>
+A:新版win10 启用了新的安全及启动策略 ，导致adbyby 原来的启动方案失效，解决方法：①win+r 输入regedit.msc 回车进入注册表编辑器 
+② 定位到 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run ③ 右侧 新建 字符串值 命名为adbyby 双击adbyby 填入adbyby的位置路径 重启电脑即可 附图 见文后
+<br><br>
+<li><strong>Q:adbyby 开启后，无杀软或白名单，无作用；怎么办？</li></strong>
+<br>
+A:这种状况基本出现在精简的系统 或ghost的系统中比较常见，解决方法 win+R  services.msc 找到 Base Filtering Engine 将他开启 并设为自动启动 重启电脑 即可
+<br><br>
+
+<li><strong>Q:adbyby 管理员身份启动后，依然提示驱动安装失败，何解？</li></strong>
+<br>
+A：这种情况的出现是因为adbyby的驱动被杀软拦截或者暗杀，请将adbyby及驱动加白 驱动位置%systemRoot%\System32\drivers\ad_driver.sys
+<br><br>
+</ul>
+
+<script type="text/javascript">
+</script>
+
+</body>
+</html>
